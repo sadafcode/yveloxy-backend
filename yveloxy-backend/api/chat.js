@@ -2,6 +2,9 @@
    Yveloxy Chatbot API - Vercel Serverless
    ============================================= */
 
+// Use native fetch (Node 18+)
+import fetch from 'node-fetch';
+
 export default async function handler(req, res) {
   // CORS headers
   res.setHeader('Access-Control-Allow-Origin', '*');
