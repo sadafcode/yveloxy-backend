@@ -48,6 +48,10 @@ export default async function handler(req, res) {
 
   } catch (error) {
     console.error('Chat API error:', error);
-    res.status(500).json({ error: 'Failed to process chat request' });
+    console.error('Error details:', error.message, error.stack);
+    res.status(500).json({
+      error: 'Failed to process chat request',
+      details: error.message
+    });
   }
 }
